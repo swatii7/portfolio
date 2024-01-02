@@ -1,99 +1,132 @@
-import React from 'react'
-import profileImg from '../../assets/Profile/profile-img.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faXTwitter, faInstagram, faSkype, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import homeIcon from '../../assets/Profile/home.png'
-import userIcon from '../../assets/Profile/user.png'
-import resumeIcon from '../../assets/Profile/file.png'
-import portfolioIcon from '../../assets/Profile/panel-left.png'
-import serviceIcon from '../../assets/Profile/server.png'
-import contactIcon from '../../assets/Profile/mail.png'
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faSkype,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import profileImg from "../../assets/Profile/profile-img.jpg";
+import { FileEarmark, FileEarmarkFill, HouseFill, PersonFill } from "react-bootstrap-icons";
+import 'boxicons'
 
 export default function Header() {
-
-  const socialLinkArr= [
+  const socialLinkArr = [
     {
-      href:'#',
-      icon:faXTwitter,
-  },
-  {
-    href:'#',
-    icon:faFacebookF,
-},
-{
-  href:'#',
-  icon:faInstagram,
-},
-{
-  href:'#',
-  icon:faSkype,
-},
-{
-  href:'#',
-  icon:faLinkedinIn,
-},
+      href: "#",
+      icon: faXTwitter,
+    },
+    {
+      href: "#",
+      icon: faFacebookF,
+    },
+    {
+      href: "#",
+      icon: faInstagram,
+    },
+    {
+      href: "#",
+      icon: faSkype,
+    },
+    {
+      href: "#",
+      icon: faLinkedinIn,
+    },
+  ];
 
-]
-
-const navLinkArr=[
-  {
-    icon: homeIcon,
-    linkName: 'Home'
-  },
-  {
-    icon: userIcon,
-    linkName: 'About'
-  },
-  {
-    icon: resumeIcon,
-    linkName: 'Resume'
-  },
-  {
-    icon: portfolioIcon,
-    linkName: 'Portfolio'
-  },
-  {
-    icon: serviceIcon,
-    linkName: 'Services'
-  },
-  {
-    icon: contactIcon,
-    linkName: 'Contact'
-  },
-
-]
+  // const navLinkArr = [
+  //   {
+  //     icon: House,
+  //     linkName: "Home",
+  //   },
+    // {
+    //   icon: faUser,
+    //   linkName: 'About'
+    // },
+    // {
+    //   icon: resumeIcon,
+    //   linkName: 'Resume'
+    // },
+    // {
+    //   icon: portfolioIcon,
+    //   linkName: 'Portfolio'
+    // },
+    // {
+    //   icon: serviceIcon,
+    //   linkName: 'Services'
+    // },
+    // {
+    //   icon: contactIcon,
+    //   linkName: 'Contact'
+    // },
+  // ];
 
   return (
-    
-    <header className='headerWrapper'>
-        <div className='d-flex flex-column'>
-            <div className='profilePicWrapper text-center align-items-center justify-content-center'>
-                <img src={profileImg} />
-                <h1 className='text-light fs-4 font-poppins fw-semibold'>Hitesh Chaudhary</h1>
-            </div>
-            <div className='text-center mt-3 socialLinks d-flex justify-content-between'>
-              {socialLinkArr.map((link,index)=>
-              <a key={index} href={link.href} className='twitterLink text-light iconWrapper'>
-              <FontAwesomeIcon icon={link.icon} />
-              </a>
-              )}
-                
-            </div>
-            <nav>
-              <ul>
-                {navLinkArr.map((link, index)=>
-                 <li key={index} className='d-flex align-items-center'>
-                 <a className='text-light d-flex align-items-center navActive'>
-                 <img src={link.icon} className='me-2' />
-                   <span>{link.linkName}</span>
-                 </a>
-               </li>
-                )}
-             
-
-              </ul>
-            </nav>
+    <header className="headerWrapper">
+      <div className="d-flex flex-column">
+        <div className="profilePicWrapper text-center align-items-center justify-content-center">
+          <img src={profileImg} />
+          <h1 className="text-light fs-4 font-poppins fw-semibold">
+            Hitesh Chaudhary
+          </h1>
         </div>
+        <div className="text-center mt-3 socialLinks d-flex justify-content-between">
+          {socialLinkArr.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="twitterLink text-light iconWrapper"
+              
+            >
+              <FontAwesomeIcon icon={link.icon} />
+            </a>
+          ))}
+        </div>
+        <nav>
+          <ul>
+            {/* {navLinkArr.map((tab, index) => ( */}
+              <li className="d-flex align-items-center" >
+                <a className="text-light d-flex align-items-end navActive boxicon" onhover={()=> console.log(`helllo`)}>
+                <box-icon name='home' color='#6f7180' ></box-icon>
+                  <span className="ms-2">Home</span>
+                </a>
+              </li>
+              <li className="d-flex align-items-center">
+                <a className="text-light d-flex align-items-end navActive">
+                <box-icon name='user' color='#6f7180' ></box-icon>
+                  <span className="ms-2">About</span>
+                </a>
+              </li>
+              <li className="d-flex align-items-center">
+                <a className="text-light d-flex align-items-end navActive">
+                <box-icon name='file-blank' color='#6f7180' ></box-icon>
+                  <span className="ms-2">Resume</span>
+                </a>
+              </li>
+              <li className="d-flex align-items-center">
+                <a className="text-light d-flex align-items-end navActive">
+                <box-icon name='book-content' color='#6f7180' ></box-icon>
+                  <span className="ms-2">Portfolio</span>
+                </a>
+              </li>
+              <li className="d-flex align-items-center">
+                <a className="text-light d-flex align-items-end navActive">
+                <box-icon name='server' color='#6f7180' ></box-icon>
+                  <span className="ms-2">Services</span>
+                </a>
+              </li>
+              <li className="d-flex align-items-center">
+                <a className="text-light d-flex align-items-end navActive">
+                <box-icon name='envelope' color='#6f7180' ></box-icon>
+                  <span className="ms-2">Contact</span>
+                </a>
+              </li>
+            {/* ))} */}
+
+          </ul>
+        </nav>
+      </div>
     </header>
-  )
+  );
 }

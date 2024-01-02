@@ -1,3 +1,9 @@
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .headerWrapper{
   position: fixed;
   top: 0;
@@ -63,4 +69,22 @@ nav ul li a span{
 
 .navActive{
   color: #149ddd;
+}
+
+nav ul li a:hover span{
+  color: #fff;
+}
+
+/* :host {
+  display: inline-block;
+  font-size: initial;
+  box-sizing: border-box;
+  width: 24px;
+  height: 30px !important;
+  margin-right: 8px !important;
+} */
+
+
+.boxicon:hover #icon {
+  fill: #149ddd !important;
 }
