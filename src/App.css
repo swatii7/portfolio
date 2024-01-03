@@ -1,7 +1,39 @@
+:root{
+  --lightBlue: #149ddd;
+  --white: #fff;
+  --blue: #173b6c;
+  --borderColor: #2c2f3f;
+  --linkColor: #a8a9b4;
+}
+
 body{
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+section{
+  padding: 60px 0px;
+  overflow-x: hidden;
+}
+
+.font-raleway{
+  font-family: 'Raleway', sans-serif;
+}
+
+.font-poppins{
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  padding: 0px 26px;
+}
+
+.customParaStyle{
+  letter-spacing: 0.7px;
+  line-height: 26px;
+  margin-bottom: 0px;
 }
 
 .headerWrapper{
@@ -19,7 +51,7 @@ body{
 .profilePicWrapper img{
  width: 120px;
  margin: 15px auto;
- border: 8px solid #2c2f3f;
+ border: 8px solid var(--borderColor);
  border-radius: 50%;
 }
 
@@ -39,8 +71,8 @@ body{
 }
 
 .iconWrapper:hover{
-  background-color: #149ddd;
-  border-color: #149ddd;
+  background-color: var(--lightBlue);
+  border-color: var(--lightBlue);
 }
 
 nav{
@@ -50,6 +82,7 @@ nav{
 nav ul li{
   list-style: none;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 nav ul li a{
@@ -68,23 +101,182 @@ nav ul li a span{
 }
 
 .navActive{
-  color: #149ddd;
+  color: var(--lightBlue);
 }
 
 nav ul li a:hover span{
   color: #fff;
 }
 
-/* :host {
-  display: inline-block;
-  font-size: initial;
-  box-sizing: border-box;
-  width: 24px;
-  height: 30px !important;
-  margin-right: 8px !important;
+.navLink i{
+  color: #6f7180;
+  /* font-size: 24px;
+  padding-right: 8px; */
+}
+
+.navLink:hover i{
+  color: var(--lightBlue);
+}
+
+.nav-item .active span{
+  color: var(--white);
+}
+
+.nav-item .active i{
+  color: var(--lightBlue);
+}
+
+/* home section */
+
+#home{
+  background-image: url(./assets/Profile/hero-bg.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+#home::before{
+  content: '';
+  background: rgba(5, 13, 24, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.heroHeadingWrapper{
+  z-index: 2;
+  min-width: 300px;
+}
+
+.heroHeadingWrapper h1{
+  font-size: 64px;
+  line-height: 56px;
+  margin: -50px 0px 10px -100px;
+}
+
+.heroHeadingWrapper p{
+  margin: 0px 0px 50px -94px;
+  font-size: 26px;
+}
+
+.heroHeadingWrapper p span .Typewriter{
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--lightBlue);
+}
+
+.animate__animated.animate__fadeIn{
+  --animate-duration: 5s;
+}
+
+.animate__animated.animate__fadeInLeft,
+.animate__animated.animate__fadeInRight{
+  --animate-duration: 2s;
+}
+
+
+
+/* about us section */
+
+.aboutSectionWrapper, .factsWrapper,
+.skillsWrapper{
+margin-left: 300px;
+}
+
+.aboutHeading{
+  padding-bottom: 30px;
+}
+
+.aboutHeading h2{
+  color: var(--blue);
+  padding-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.aboutHeading h2::after{
+  content: '';
+  position: absolute;
+  background-color: var(--lightBlue);
+  display: block;
+  width: 50px;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+}
+
+.profileImgWrapper img{
+  max-width: 404px;
+  width: 100%;
+}
+
+.introWrapper h3{
+  font-size: 26px;
+  color: var(--blue);
+}
+
+.detailsList ul{
+  list-style: none;
+  padding-left: 0px;
+}
+
+.listIcon{
+  color: var(--lightBlue);
+  margin-right: 5px;
+}
+
+.detailsList ul li{
+  margin-bottom: 20px;
+  
+}
+
+.detailsList ul li strong{
+  margin-right: 5px;
+}
+ 
+/* facts section  */
+
+.factsWrapper, .skillsWrapper{
+  padding-bottom: 30px;
+}
+
+.countBox{
+  padding: 30px;
+}
+
+.factsIcon{
+  display: block;
+  font-size: 44px;
+  color: var(--lightBlue);
+  float: left;
+  line-height: 0;
+}
+
+.number{
+  font-size: 48px;
+  line-height: 40px;
+  display: block;
+  font-weight: 700;
+  color: #050d18;
+  margin-left: 60px;
+}
+
+.countBox p{
+  padding: 15px 0 0 0;
+  margin: 0 0 0 60px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: #122f57;
+}
+
+/* .countBox p strong{
+  font-size: 14px;
+  color: #122f57;
 } */
 
-
-.boxicon:hover #icon {
-  fill: #149ddd !important;
-}
+/* skills section */

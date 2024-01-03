@@ -6,10 +6,12 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import "boxicons";
+import "boxicons/css/boxicons.min.css";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
 import profileImg from "../../assets/Profile/profile-img.jpg";
-import { FileEarmark, FileEarmarkFill, HouseFill, PersonFill } from "react-bootstrap-icons";
-import 'boxicons'
+import 'animate.css';
 
 export default function Header() {
   const socialLinkArr = [
@@ -35,32 +37,50 @@ export default function Header() {
     },
   ];
 
-  // const navLinkArr = [
-  //   {
-  //     icon: House,
-  //     linkName: "Home",
-  //   },
-    // {
-    //   icon: faUser,
-    //   linkName: 'About'
-    // },
-    // {
-    //   icon: resumeIcon,
-    //   linkName: 'Resume'
-    // },
-    // {
-    //   icon: portfolioIcon,
-    //   linkName: 'Portfolio'
-    // },
-    // {
-    //   icon: serviceIcon,
-    //   linkName: 'Services'
-    // },
-    // {
-    //   icon: contactIcon,
-    //   linkName: 'Contact'
-    // },
-  // ];
+  const navLinkArr = [
+    {
+      href: "home",
+      icon: <i class="fs-4 pe-2 bx bx-home"></i>,
+      linkName: "Home",
+    },
+    {
+      href: "about",
+      icon: <i class="fs-4 pe-2 bx bx-user"></i>,
+      linkName: "About",
+    },
+    {
+      href: "",
+      icon: <i class="fs-4 pe-2 bx bx-file-blank"></i>,
+      linkName: "Resume",
+    },
+    {
+      href: "",
+      icon: <i class="fs-4 pe-2 bx bx-book-content"></i>,
+      linkName: "Portfolio",
+    },
+    {
+      href: "",
+      icon: <i class="fs-4 pe-2 bx bx-server"></i>,
+      linkName: "Services",
+    },
+    {
+      href: "",
+      icon: <i class="fs-4 pe-2 bx bx-envelope"></i>,
+      linkName: "Contact",
+    },
+  ];
+
+  // state for hover in nav icons
+  const [isHovered, setIsHovered] = useState("home");
+  const [isActive, setIsActive] = useState("home");
+
+  const handleHover = (name) => {
+    setIsHovered(name);
+  };
+
+  const clickHandler = (name) => {
+    setIsActive(name);
+  };
 
   return (
     <header className="headerWrapper">
@@ -77,7 +97,6 @@ export default function Header() {
               key={index}
               href={link.href}
               className="twitterLink text-light iconWrapper"
-              
             >
               <FontAwesomeIcon icon={link.icon} />
             </a>
@@ -85,45 +104,25 @@ export default function Header() {
         </div>
         <nav>
           <ul>
-            {/* {navLinkArr.map((tab, index) => ( */}
-              <li className="d-flex align-items-center" >
-                <a className="text-light d-flex align-items-end navActive boxicon" onhover={()=> console.log(`helllo`)}>
-                <box-icon name='home' color='#6f7180' ></box-icon>
-                  <span className="ms-2">Home</span>
-                </a>
+            {navLinkArr.map((tab, index) => (
+              <li key={index} className="d-flex align-items-center nav-item">
+                <Link
+                  to={tab.href}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className={`d-flex align-items-end navLink ${
+                    isHovered === tab.icon ? "hovered" : ""
+                  }`}
+                  onMouseEnter={() => handleHover(tab.icon)}
+                  onMouseLeave={() => setIsHovered("")}
+                  onClick={() => clickHandler(tab.icon)}
+                >
+                  {tab.icon}
+                  <span>{tab.linkName}</span>
+                </Link>
               </li>
-              <li className="d-flex align-items-center">
-                <a className="text-light d-flex align-items-end navActive">
-                <box-icon name='user' color='#6f7180' ></box-icon>
-                  <span className="ms-2">About</span>
-                </a>
-              </li>
-              <li className="d-flex align-items-center">
-                <a className="text-light d-flex align-items-end navActive">
-                <box-icon name='file-blank' color='#6f7180' ></box-icon>
-                  <span className="ms-2">Resume</span>
-                </a>
-              </li>
-              <li className="d-flex align-items-center">
-                <a className="text-light d-flex align-items-end navActive">
-                <box-icon name='book-content' color='#6f7180' ></box-icon>
-                  <span className="ms-2">Portfolio</span>
-                </a>
-              </li>
-              <li className="d-flex align-items-center">
-                <a className="text-light d-flex align-items-end navActive">
-                <box-icon name='server' color='#6f7180' ></box-icon>
-                  <span className="ms-2">Services</span>
-                </a>
-              </li>
-              <li className="d-flex align-items-center">
-                <a className="text-light d-flex align-items-end navActive">
-                <box-icon name='envelope' color='#6f7180' ></box-icon>
-                  <span className="ms-2">Contact</span>
-                </a>
-              </li>
-            {/* ))} */}
-
+            ))}
           </ul>
         </nav>
       </div>
