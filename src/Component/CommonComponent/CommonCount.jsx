@@ -11,7 +11,7 @@ export default function CommonCount({
   return (
     <div className="number">
       <CountUp
-        duration={5}
+        duration={8}
         className={className}
         end={end}
         scrollSpyDelay={scrollSpyDelay}

@@ -280,3 +280,24 @@ margin-left: 300px;
 } */
 
 /* skills section */
+.skillsWrapper{
+  background-color: #f5f8fd;
+}
+
+.progress, .progress-stacked{
+  height: 10px;
+  border-radius: 0px;
+  --bs-progress-bar-bg: #149ddd !important;
+  margin-top: 6px;
+}
+
+.progressSpan{
+  font-weight: 600;
+  font-size: 12px;
+  color: #050d18;
+}
+
+.progressSpan .val{
+  font-style: normal;
+  float: right;
+}

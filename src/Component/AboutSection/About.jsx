@@ -8,6 +8,8 @@ import {
   People,
 } from "react-bootstrap-icons";
 import CommonCount from "../CommonComponent/CommonCount";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import { ProgressBar } from "react-bootstrap";
 
 export default function About() {
   const detailListleftArr = [
@@ -88,10 +90,15 @@ export default function About() {
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-lg-4 profileImgWrapper animate__animated animate__fadeInLeft">
+            
+            <div className="col-12 col-lg-4 profileImgWrapper">
+            <AnimationOnScroll animateIn="animate__fadeInLeft">
               <img src={profileImg} />
+              </AnimationOnScroll>
             </div>
-            <div className="col-12 col-lg-8 introWrapper animate__animated animate__fadeInRight">
+           
+            <div className="col-12 col-lg-8 introWrapper">
+            <AnimationOnScroll animateIn="animate__fadeInRight">
               <h3 className="fw-bold font-raleway">
                 UI/UX Designer & Web Developer.
               </h3>
@@ -132,7 +139,9 @@ export default function About() {
                 possibilities and a commitment to staying at the forefront of
                 industry trends.
               </p>
+              </AnimationOnScroll>
             </div>
+            
           </div>
         </div>
       </section>
@@ -145,7 +154,7 @@ export default function About() {
               <h2 className="fs-2 font-raleway position-relative">Facts</h2>
               <p className="customParaStyle">
                 With a customer-centric approach, I navigate the intricacies of
-                [your industry]. My focus is not just on delivering a product or
+                IT. My focus is not just on delivering a product or
                 service but on creating meaningful and memorable experiences
                 that resonate with the needs and aspirations of the end-users.
               </p>
@@ -154,6 +163,7 @@ export default function About() {
           <div className="row">
             {factsArr.map((facts, index)=>
             <div key={index} className="col-12 col-md-6 col-lg-3">
+              <AnimationOnScroll animateIn="animate__fadeInUp">
             <div className="countBox">
               {facts.icon}
               <CommonCount end={facts.end} separator= "" />
@@ -161,6 +171,7 @@ export default function About() {
                 <strong className="font-raleway">{facts.label}</strong>
               </p>
             </div>
+            </AnimationOnScroll>
             </div>
             )}
             
@@ -173,15 +184,16 @@ export default function About() {
             <div className="col-12 aboutHeading">
               <h2 className="fs-2 font-raleway position-relative">Skills</h2>
               <p className="customParaStyle">
-                With a customer-centric approach, I navigate the intricacies of
-                [your industry]. My focus is not just on delivering a product or
-                service but on creating meaningful and memorable experiences
-                that resonate with the needs and aspirations of the end-users.
+              Navigating both the frontend and backend landscapes with finesse, I bring a full-stack skill set to the table. Crafting seamless user experiences and robust server-side solutions is not just a job, it's a passion.
               </p>
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-6 col-lg-3"></div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan">HTML
+              <i className="val">100%</i></span>
+              <ProgressBar now={100} />
+            </div>
           </div>
         </div>
       </section>

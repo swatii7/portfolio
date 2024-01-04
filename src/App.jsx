@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Home from './Component/HomeSection/Home'
 import About from './Component/AboutSection/About';
-import 'animate.css';
+import "animate.css/animate.min.css";
 
 function App() {
 
