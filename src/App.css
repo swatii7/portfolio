@@ -289,6 +289,7 @@ margin-left: 300px;
   border-radius: 0px;
   --bs-progress-bar-bg: #149ddd !important;
   margin-top: 6px;
+  margin-bottom: 20px;
 }
 
 .progressSpan{
@@ -300,4 +301,21 @@ margin-left: 300px;
 .progressSpan .val{
   font-style: normal;
   float: right;
+}
+
+.progress-bar{
+ transform: scaleX(0);
+ transform-origin: left;
+ animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+ /* animation-delay: 4s; */
+}
+
+.progress .progress-bar.animate{
+  animation: animate 1.5s 0.5s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate{
+  100% {
+    transform: scaleX(1);
+  }
 }

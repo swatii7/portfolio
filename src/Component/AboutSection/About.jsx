@@ -190,9 +190,45 @@ export default function About() {
           </div>
           <div className="row">
             <div className="col-12 col-lg-6">
-              <span className="font-poppins progressSpan">HTML
+              <span className="font-poppins progressSpan text-uppercase">html
+              <i className="val">100%</i></span>
+              <ProgressBar className="progressBarOne" now={100} />
+            </div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">php
+              <i className="val">75%</i></span>
+              <ProgressBar now={75} />
+            </div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">css
+              <i className="val">90%</i></span>
+              <ProgressBar now={90} />
+            </div>
+            
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">shopify
+              <i className="val">65%</i></span>
+              <ProgressBar now={65} />
+            </div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">javascript
               <i className="val">100%</i></span>
               <ProgressBar now={100} />
+            </div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">react
+              <i className="val">100%</i></span>
+              <ProgressBar now={100} />
+            </div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">wordpress/cms
+              <i className="val">80%</i></span>
+              <ProgressBar now={80} />
+            </div>
+            <div className="col-12 col-lg-6">
+              <span className="font-poppins progressSpan text-uppercase">react-native
+              <i className="val">88%</i></span>
+              <ProgressBar now={88} />
             </div>
           </div>
         </div>
