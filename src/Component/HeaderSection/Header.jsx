@@ -49,22 +49,22 @@ export default function Header() {
       linkName: "About",
     },
     {
-      href: "",
+      href: "resume",
       icon: <i class="fs-4 pe-2 bx bx-file-blank"></i>,
       linkName: "Resume",
     },
     {
-      href: "",
+      href: "portfolio",
       icon: <i class="fs-4 pe-2 bx bx-book-content"></i>,
       linkName: "Portfolio",
     },
     {
-      href: "",
+      href: "services",
       icon: <i class="fs-4 pe-2 bx bx-server"></i>,
       linkName: "Services",
     },
     {
-      href: "",
+      href: "contact",
       icon: <i class="fs-4 pe-2 bx bx-envelope"></i>,
       linkName: "Contact",
     },

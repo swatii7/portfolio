@@ -2,6 +2,10 @@ import React from 'react'
 import Typewriter from 'typewriter-effect';
 import About from '../AboutSection/About';
 import 'animate.css';
+import Resume from '../ResumeSection/Resume';
+import Portfolio from '../PortfolioSection/Portfolio';
+import Service from '../ServiceSection/Service';
+import Contact from '../ContactSection/Contact';
 
 export default function Home() {
   return (
@@ -26,7 +30,11 @@ export default function Home() {
       </p>
      </div>
     </section>
-    <About />
+     <About />
+   <Resume />
+   <Portfolio />
+   <Service />
+   <Contact />
     </>
   )
 }
